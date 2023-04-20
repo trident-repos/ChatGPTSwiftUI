@@ -42,7 +42,21 @@ struct ContentView: View {
                 Spacer()
                 #endif
             }
-            .onChange(of: vm.messages.last?.responseText) { _ in  scrollToBottom(proxy: proxy)
+            .onChange(of: vm.messages.last?.responseText) { _ in  scrollToBottom(proxy: proxy) }
+            .onChange(of: vm.scrollingToCommand) { newValue in
+                switch newValue.type {
+                case .bottom:
+                    withAnimation {
+                        scrollToBottom(proxy: proxy)
+                    }
+                    
+                case .top:
+                    withAnimation {
+                        scrollToTop(proxy: proxy)
+                    }
+                    
+                default: break
+                }
             }
         }
         .background(colorScheme == .light ? .white : Color(red: 52/255, green: 53/255, blue: 65/255, opacity: 0.5))
@@ -58,7 +72,6 @@ struct ContentView: View {
                 } placeholder: {
                     ProgressView()
                 }
-
             } else {
                 Image(image)
                     .resizable()
@@ -101,6 +114,11 @@ struct ContentView: View {
     private func scrollToBottom(proxy: ScrollViewProxy) {
         guard let id = vm.messages.last?.id else { return }
         proxy.scrollTo(id, anchor: .bottomTrailing)
+    }
+    
+    private func scrollToTop(proxy: ScrollViewProxy) {
+        guard let id = vm.messages.first?.id else { return }
+        proxy.scrollTo(id, anchor: .topLeading)
     }
 }
 

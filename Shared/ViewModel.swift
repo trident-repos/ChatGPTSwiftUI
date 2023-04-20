@@ -9,20 +9,36 @@ import Foundation
 import SwiftUI
 import AVKit
 
+enum ScrollingToCommandType: Equatable {
+    case none
+    case top
+    case bottom
+}
+
+struct ScrollingToCommand: Equatable {
+    let id = UUID()
+    let type: ScrollingToCommandType
+}
+
 class ViewModel: ObservableObject {
     
     @Published var isInteractingWithChatGPT = false
     @Published var messages: [MessageRow] = []
     @Published var inputMessage: String = ""
+    @Published var scrollingToCommand = ScrollingToCommand(type: .none)
     
+    #if !os(watchOS)
     private var synthesizer: AVSpeechSynthesizer?
+    #endif
     
     private let api: ChatGPTAPI
     
     init(api: ChatGPTAPI, enableSpeech: Bool = false) {
         self.api = api
         if enableSpeech {
+            #if !os(watchOS)
             synthesizer = .init()
+            #endif
         }
     }
     
@@ -54,36 +70,83 @@ class ViewModel: ObservableObject {
     @MainActor
     private func send(text: String) async {
         isInteractingWithChatGPT = true
+        let parser = ParserTask()
+        let send = await parser.parseAwait(text: text)
+        
         var streamText = ""
         var messageRow = MessageRow(
             isInteractingWithChatGPT: true,
             sendImage: "profile",
-            sendText: text,
+            send: .Attributed(.init(string: text, results: send)),
             responseImage: "openai",
-            responseText: streamText,
             responseError: nil)
         
         self.messages.append(messageRow)
         
+        let parserThresholdTextCount = 64
         do {
             let stream = try await api.sendMessageStream(text: text)
+            var parserTextCount = 0
             for try await text in stream {
                 streamText += text
-                messageRow.responseText = streamText.trimmingCharacters(in: .whitespacesAndNewlines)
+                parserTextCount += text.count
+                if parserTextCount >= parserThresholdTextCount || text.contains("```") {
+                    parser.parse(text: streamText)
+                    parserTextCount = 0
+                }
+                
+                if let currentOutput = parser.output, !currentOutput.results.isEmpty {
+                    let suffixText = streamText.trimmingPrefix(currentOutput.string)
+                    var results = currentOutput.results
+                    let lastResult = results[results.count - 1]
+                    var lastAttrString = lastResult.attributedString
+                    if lastResult.isCodeBlock {
+                        
+                    #if os(macOS)
+                        lastAttrString.append(AttributedString(String(suffixText), attributes: .init([.font: NSFont.preferredFont(forTextStyle: .body).apply(newTraits: .monoSpace), .foregroundColor: NSColor.white])))
+                    #else
+                        lastAttrString.append(AttributedString(String(suffixText), attributes: .init([.font: UIFont.preferredFont(forTextStyle: .body).apply(newTraits: .traitMonoSpace), .foregroundColor: UIColor.white])))
+                    #endif
+                    } else {
+                        lastAttrString.append(AttributedString(String(suffixText)))
+                    }
+                    results[results.count - 1] = ParserResult(attributedString: lastAttrString, isCodeBlock: lastResult.isCodeBlock, codeBlockLanguage: lastResult.codeBlockLanguage)
+                    messageRow.response = .Attributed(.init(string: streamText, results: results))
+                } else {
+                    messageRow.response = .Attributed(.init(string: streamText, results: [
+                        ParserResult(attributedString: AttributedString(stringLiteral: streamText), isCodeBlock: false, codeBlockLanguage: nil)
+                    ]))
+                }
                 self.messages[self.messages.count - 1] = messageRow
             }
         } catch {
             messageRow.responseError = error.localizedDescription
+            messageRow.response = .rawText(streamText)
+        }
+
+        func completeResponse(messageRow: inout MessageRow) {
+            messageRow.isInteractingWithChatGPT = false
+            self.messages[self.messages.count - 1] = messageRow
+            self.isInteractingWithChatGPT = false
+            self.speakLastResponse()
         }
         
-        messageRow.isInteractingWithChatGPT = false
-        self.messages[self.messages.count - 1] = messageRow
-        isInteractingWithChatGPT = false
-        speakLastResponse()
-        
+        if let result = parser.output?.string, result != streamText {
+            parser.parse(text: streamText) {
+                Task { @MainActor [weak self]  in
+                    guard self != nil else { return }
+                    messageRow.response = .Attributed(.init(string: streamText, results: parser.output?.results ?? []))
+                    completeResponse(messageRow: &messageRow)
+                }
+            }
+        } else {
+            completeResponse(messageRow: &messageRow)
+        }
     }
     
     func speakLastResponse() {
+        return
+        #if !os(watchOS)
         guard let synthesizer, let responseText = self.messages.last?.responseText, !responseText.isEmpty else {
             return
         }
@@ -94,10 +157,13 @@ class ViewModel: ObservableObject {
         utterance.pitchMultiplier = 0.8
         utterance.postUtteranceDelay = 0.2
         synthesizer.speak(utterance )
+        #endif
     }
     
     func stopSpeaking() {
+        #if !os(watchOS)
         synthesizer?.stopSpeaking(at: .immediate)
+        #endif
     }
     
 }

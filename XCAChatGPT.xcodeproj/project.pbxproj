@@ -35,7 +35,12 @@
 		8B057622298FBE0400A56C9A /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91C019298ADF7F0079AF26 /* MessageRowView.swift */; };
 		8B057623298FBE0400A56C9A /* DotLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91C017298ADF4E0079AF26 /* DotLoadingView.swift */; };
 		8B057624298FBE0400A56C9A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91C013298ADC560079AF26 /* ViewModel.swift */; };
-		8B05764829909A9200A56C9A /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05764729909A9200A56C9A /* ScrollView.swift */; };
+		8B2A311829EA883A00EFEDC4 /* FocusedAttributedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A311729EA883A00EFEDC4 /* FocusedAttributedText.swift */; };
+		8B2A311A29EA88C000EFEDC4 /* MessageRowHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A311929EA88C000EFEDC4 /* MessageRowHelper.swift */; };
+		8B2A311E29EA89A900EFEDC4 /* CodeblockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A311D29EA89A900EFEDC4 /* CodeblockView.swift */; };
+		8B2A311F29EA89A900EFEDC4 /* CodeblockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A311D29EA89A900EFEDC4 /* CodeblockView.swift */; };
+		8B2A312029EA89A900EFEDC4 /* CodeblockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A311D29EA89A900EFEDC4 /* CodeblockView.swift */; };
+		8B2A312129EA89A900EFEDC4 /* CodeblockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A311D29EA89A900EFEDC4 /* CodeblockView.swift */; };
 		8B612E2529D68CC9008DF5AF /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612E2229D68CC9008DF5AF /* TextView.swift */; };
 		8B612E2629D68CC9008DF5AF /* TokenizerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612E2329D68CC9008DF5AF /* TokenizerView.swift */; };
 		8B612E2729D68CC9008DF5AF /* TokenizerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B612E2429D68CC9008DF5AF /* TokenizerViewModel.swift */; };
@@ -53,6 +58,25 @@
 		8B91C016298ADC9D0079AF26 /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91C015298ADC9D0079AF26 /* MessageRow.swift */; };
 		8B91C018298ADF4E0079AF26 /* DotLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91C017298ADF4E0079AF26 /* DotLoadingView.swift */; };
 		8B91C01A298ADF7F0079AF26 /* MessageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B91C019298ADF7F0079AF26 /* MessageRowView.swift */; };
+		8BDC842929E27F000067A8FD /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC842829E27F000067A8FD /* Markdown */; };
+		8BDC842E29E27F690067A8FD /* MarkdownAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC842D29E27F690067A8FD /* MarkdownAttributedStringParser.swift */; };
+		8BDC842F29E27F690067A8FD /* MarkdownAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC842D29E27F690067A8FD /* MarkdownAttributedStringParser.swift */; };
+		8BDC843829E2812B0067A8FD /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC843729E2812B0067A8FD /* Markdown */; };
+		8BDC843C29E286EE0067A8FD /* HighlighterContstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843B29E286EE0067A8FD /* HighlighterContstants.swift */; };
+		8BDC843D29E286EE0067A8FD /* HighlighterContstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843B29E286EE0067A8FD /* HighlighterContstants.swift */; };
+		8BDC843F29E296410067A8FD /* ParserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843E29E296410067A8FD /* ParserTask.swift */; };
+		8BDC844029E296410067A8FD /* ParserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843E29E296410067A8FD /* ParserTask.swift */; };
+		8BDC844129E299690067A8FD /* ParserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843E29E296410067A8FD /* ParserTask.swift */; };
+		8BDC844229E2996A0067A8FD /* ParserTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843E29E296410067A8FD /* ParserTask.swift */; };
+		8BDC844329E299780067A8FD /* MarkdownAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC842D29E27F690067A8FD /* MarkdownAttributedStringParser.swift */; };
+		8BDC844429E299790067A8FD /* MarkdownAttributedStringParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC842D29E27F690067A8FD /* MarkdownAttributedStringParser.swift */; };
+		8BDC844529E2997D0067A8FD /* HighlighterContstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843B29E286EE0067A8FD /* HighlighterContstants.swift */; };
+		8BDC844629E2997E0067A8FD /* HighlighterContstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDC843B29E286EE0067A8FD /* HighlighterContstants.swift */; };
+		8BDC844829E2998D0067A8FD /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC844729E2998D0067A8FD /* Markdown */; };
+		8BDC844B29E299990067A8FD /* Markdown in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC844A29E299990067A8FD /* Markdown */; };
+		8BDC845229E2D4CA0067A8FD /* Highlighter in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC845129E2D4CA0067A8FD /* Highlighter */; };
+		8BDC845429E2D4D40067A8FD /* Highlighter in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC845329E2D4D40067A8FD /* Highlighter */; };
+		8BDC845829E2D4E00067A8FD /* Highlighter in Frameworks */ = {isa = PBXBuildFile; productRef = 8BDC845729E2D4E00067A8FD /* Highlighter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +118,9 @@
 		8B057613298FBDB600A56C9A /* XCAChatGPTTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCAChatGPTTVApp.swift; sourceTree = "<group>"; };
 		8B057617298FBDB700A56C9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B05761A298FBDB700A56C9A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8B05764729909A9200A56C9A /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		8B2A311729EA883A00EFEDC4 /* FocusedAttributedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusedAttributedText.swift; sourceTree = "<group>"; };
+		8B2A311929EA88C000EFEDC4 /* MessageRowHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowHelper.swift; sourceTree = "<group>"; };
+		8B2A311D29EA89A900EFEDC4 /* CodeblockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeblockView.swift; sourceTree = "<group>"; };
 		8B612E2229D68CC9008DF5AF /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		8B612E2329D68CC9008DF5AF /* TokenizerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenizerView.swift; sourceTree = "<group>"; };
 		8B612E2429D68CC9008DF5AF /* TokenizerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenizerViewModel.swift; sourceTree = "<group>"; };
@@ -109,6 +135,10 @@
 		8B91C015298ADC9D0079AF26 /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		8B91C017298ADF4E0079AF26 /* DotLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotLoadingView.swift; sourceTree = "<group>"; };
 		8B91C019298ADF7F0079AF26 /* MessageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRowView.swift; sourceTree = "<group>"; };
+		8BDC842D29E27F690067A8FD /* MarkdownAttributedStringParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownAttributedStringParser.swift; sourceTree = "<group>"; };
+		8BDC843B29E286EE0067A8FD /* HighlighterContstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlighterContstants.swift; sourceTree = "<group>"; };
+		8BDC843E29E296410067A8FD /* ParserTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTask.swift; sourceTree = "<group>"; };
+		8BDC844929E299900067A8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +146,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDC845429E2D4D40067A8FD /* Highlighter in Frameworks */,
+				8BDC843829E2812B0067A8FD /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDC844829E2998D0067A8FD /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +163,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDC845829E2D4E00067A8FD /* Highlighter in Frameworks */,
+				8BDC844B29E299990067A8FD /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B612E2A29D68CE3008DF5AF /* GPTEncoder in Frameworks */,
+				8BDC845229E2D4CA0067A8FD /* Highlighter in Frameworks */,
+				8BDC842929E27F000067A8FD /* Markdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,13 +203,17 @@
 		8B057591298E52CB00A56C9A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8BDC842D29E27F690067A8FD /* MarkdownAttributedStringParser.swift */,
+				8BDC843B29E286EE0067A8FD /* HighlighterContstants.swift */,
 				8B91C011298AD0CE0079AF26 /* ChatGPTAPI.swift */,
 				8B82463329B1F49F0069B8F7 /* ChatGPTAPIModels.swift */,
 				8B91C005298AD09E0079AF26 /* ContentView.swift */,
 				8B91C017298ADF4E0079AF26 /* DotLoadingView.swift */,
 				8B91C019298ADF7F0079AF26 /* MessageRowView.swift */,
+				8B2A311D29EA89A900EFEDC4 /* CodeblockView.swift */,
 				8B91C013298ADC560079AF26 /* ViewModel.swift */,
 				8B91C015298ADC9D0079AF26 /* MessageRow.swift */,
+				8BDC843E29E296410067A8FD /* ParserTask.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -198,10 +239,12 @@
 		8B057612298FBDB600A56C9A /* XCAChatGPTTV */ = {
 			isa = PBXGroup;
 			children = (
+				8BDC844929E299900067A8FD /* Info.plist */,
 				8B057613298FBDB600A56C9A /* XCAChatGPTTVApp.swift */,
 				8B057617298FBDB700A56C9A /* Assets.xcassets */,
 				8B057619298FBDB700A56C9A /* Preview Content */,
-				8B05764729909A9200A56C9A /* ScrollView.swift */,
+				8B2A311729EA883A00EFEDC4 /* FocusedAttributedText.swift */,
+				8B2A311929EA88C000EFEDC4 /* MessageRowHelper.swift */,
 			);
 			path = XCAChatGPTTV;
 			sourceTree = "<group>";
@@ -223,6 +266,7 @@
 				8B0575F4298FA9D800A56C9A /* XCAChatGPTWatch Watch App */,
 				8B057612298FBDB600A56C9A /* XCAChatGPTTV */,
 				8B91C001298AD09E0079AF26 /* Products */,
+				8BDC843629E2812B0067A8FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,6 +303,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8BDC843629E2812B0067A8FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,6 +326,10 @@
 			dependencies = (
 			);
 			name = XCAChatGPTMac;
+			packageProductDependencies = (
+				8BDC843729E2812B0067A8FD /* Markdown */,
+				8BDC845329E2D4D40067A8FD /* Highlighter */,
+			);
 			productName = XCAChatGPTMac;
 			productReference = 8B057582298E52C000A56C9A /* XCAChatGPTMac.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +364,9 @@
 			dependencies = (
 			);
 			name = "XCAChatGPTWatch Watch App";
+			packageProductDependencies = (
+				8BDC844729E2998D0067A8FD /* Markdown */,
+			);
 			productName = "XCAChatGPTWatch Watch App";
 			productReference = 8B0575F0298FA9D800A56C9A /* XCAChatGPTWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +384,10 @@
 			dependencies = (
 			);
 			name = XCAChatGPTTV;
+			packageProductDependencies = (
+				8BDC844A29E299990067A8FD /* Markdown */,
+				8BDC845729E2D4E00067A8FD /* Highlighter */,
+			);
 			productName = XCAChatGPTTV;
 			productReference = 8B057611298FBDB600A56C9A /* XCAChatGPTTV.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +407,8 @@
 			name = XCAChatGPT;
 			packageProductDependencies = (
 				8B612E2929D68CE3008DF5AF /* GPTEncoder */,
+				8BDC842829E27F000067A8FD /* Markdown */,
+				8BDC845129E2D4CA0067A8FD /* Highlighter */,
 			);
 			productName = XCAChatGPT;
 			productReference = 8B91C000298AD09E0079AF26 /* XCAChatGPT.app */;
@@ -388,6 +452,8 @@
 			mainGroup = 8B91BFF7298AD09E0079AF26;
 			packageReferences = (
 				8B612E2829D68CE3008DF5AF /* XCRemoteSwiftPackageReference "GPTEncoder" */,
+				8BDC842729E27F000067A8FD /* XCRemoteSwiftPackageReference "swift-markdown" */,
+				8BDC845029E2D4CA0067A8FD /* XCRemoteSwiftPackageReference "HighlighterSwift" */,
 			);
 			productRefGroup = 8B91C001298AD09E0079AF26 /* Products */;
 			projectDirPath = "";
@@ -459,8 +525,12 @@
 				8B057594298E52D900A56C9A /* ContentView.swift in Sources */,
 				8B057592298E52D900A56C9A /* DotLoadingView.swift in Sources */,
 				8B057595298E52D900A56C9A /* MessageRowView.swift in Sources */,
+				8BDC844029E296410067A8FD /* ParserTask.swift in Sources */,
+				8BDC843D29E286EE0067A8FD /* HighlighterContstants.swift in Sources */,
 				8B057585298E52C000A56C9A /* XCAChatGPTMacApp.swift in Sources */,
+				8BDC842F29E27F690067A8FD /* MarkdownAttributedStringParser.swift in Sources */,
 				8B057596298E52DD00A56C9A /* ViewModel.swift in Sources */,
+				8B2A311F29EA89A900EFEDC4 /* CodeblockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,13 +539,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B057608298FA9E900A56C9A /* DotLoadingView.swift in Sources */,
+				8BDC844129E299690067A8FD /* ParserTask.swift in Sources */,
 				8B057606298FA9E900A56C9A /* MessageRowView.swift in Sources */,
+				8BDC844529E2997D0067A8FD /* HighlighterContstants.swift in Sources */,
 				8B82463629B1F49F0069B8F7 /* ChatGPTAPIModels.swift in Sources */,
 				8B057609298FA9E900A56C9A /* MessageRow.swift in Sources */,
 				8B057605298FA9E900A56C9A /* ContentView.swift in Sources */,
+				8BDC844329E299780067A8FD /* MarkdownAttributedStringParser.swift in Sources */,
 				8B05760A298FA9E900A56C9A /* ChatGPTAPI.swift in Sources */,
 				8B057607298FA9E900A56C9A /* ViewModel.swift in Sources */,
 				8B0575F6298FA9D800A56C9A /* XCAChatGPTWatchApp.swift in Sources */,
+				8B2A312029EA89A900EFEDC4 /* CodeblockView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,10 +562,15 @@
 				8B82463729B1F49F0069B8F7 /* ChatGPTAPIModels.swift in Sources */,
 				8B05761F298FBE0400A56C9A /* ChatGPTAPI.swift in Sources */,
 				8B057623298FBE0400A56C9A /* DotLoadingView.swift in Sources */,
+				8B2A311829EA883A00EFEDC4 /* FocusedAttributedText.swift in Sources */,
 				8B057614298FBDB600A56C9A /* XCAChatGPTTVApp.swift in Sources */,
-				8B05764829909A9200A56C9A /* ScrollView.swift in Sources */,
+				8B2A312129EA89A900EFEDC4 /* CodeblockView.swift in Sources */,
+				8BDC844229E2996A0067A8FD /* ParserTask.swift in Sources */,
 				8B057620298FBE0400A56C9A /* ContentView.swift in Sources */,
+				8B2A311A29EA88C000EFEDC4 /* MessageRowHelper.swift in Sources */,
 				8B057624298FBE0400A56C9A /* ViewModel.swift in Sources */,
+				8BDC844629E2997E0067A8FD /* HighlighterContstants.swift in Sources */,
+				8BDC844429E299790067A8FD /* MarkdownAttributedStringParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,10 +584,14 @@
 				8B612E2729D68CC9008DF5AF /* TokenizerViewModel.swift in Sources */,
 				8B82463429B1F49F0069B8F7 /* ChatGPTAPIModels.swift in Sources */,
 				8B91C014298ADC560079AF26 /* ViewModel.swift in Sources */,
+				8BDC843C29E286EE0067A8FD /* HighlighterContstants.swift in Sources */,
 				8B91C018298ADF4E0079AF26 /* DotLoadingView.swift in Sources */,
+				8B2A311E29EA89A900EFEDC4 /* CodeblockView.swift in Sources */,
 				8B91C004298AD09E0079AF26 /* XCAChatGPTApp.swift in Sources */,
 				8B612E2529D68CC9008DF5AF /* TextView.swift in Sources */,
 				8B91C01A298ADF7F0079AF26 /* MessageRowView.swift in Sources */,
+				8BDC843F29E296410067A8FD /* ParserTask.swift in Sources */,
+				8BDC842E29E27F690067A8FD /* MarkdownAttributedStringParser.swift in Sources */,
 				8B91C016298ADC9D0079AF26 /* MessageRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -683,6 +766,7 @@
 				DEVELOPMENT_TEAM = 5C2XD9H2JS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XCAChatGPTTV/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -711,6 +795,7 @@
 				DEVELOPMENT_TEAM = 5C2XD9H2JS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = XCAChatGPTTV/Info.plist;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -968,6 +1053,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8BDC842729E27F000067A8FD /* XCRemoteSwiftPackageReference "swift-markdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-markdown";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		8BDC845029E2D4CA0067A8FD /* XCRemoteSwiftPackageReference "HighlighterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alfianlosari/HighlighterSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -975,6 +1076,41 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8B612E2829D68CE3008DF5AF /* XCRemoteSwiftPackageReference "GPTEncoder" */;
 			productName = GPTEncoder;
+		};
+		8BDC842829E27F000067A8FD /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC842729E27F000067A8FD /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		8BDC843729E2812B0067A8FD /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC842729E27F000067A8FD /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		8BDC844729E2998D0067A8FD /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC842729E27F000067A8FD /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		8BDC844A29E299990067A8FD /* Markdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC842729E27F000067A8FD /* XCRemoteSwiftPackageReference "swift-markdown" */;
+			productName = Markdown;
+		};
+		8BDC845129E2D4CA0067A8FD /* Highlighter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC845029E2D4CA0067A8FD /* XCRemoteSwiftPackageReference "HighlighterSwift" */;
+			productName = Highlighter;
+		};
+		8BDC845329E2D4D40067A8FD /* Highlighter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC845029E2D4CA0067A8FD /* XCRemoteSwiftPackageReference "HighlighterSwift" */;
+			productName = Highlighter;
+		};
+		8BDC845729E2D4E00067A8FD /* Highlighter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BDC845029E2D4CA0067A8FD /* XCRemoteSwiftPackageReference "HighlighterSwift" */;
+			productName = Highlighter;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

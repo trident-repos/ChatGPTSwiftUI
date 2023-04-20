@@ -10,9 +10,9 @@ import SwiftUI
 @main
 struct XCAChatGPTTVApp: App {
     
-    @StateObject var vm = ViewModel(api: ChatGPTAPI(apiKey: "API_KEY"), enableSpeech: true)
-    
+    @StateObject var vm = ViewModel(api: ChatGPTAPI(apiKey: "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"), enableSpeech: true)
     @FocusState var isTextFieldFocused: Bool
+    @FocusState var isBottomButtonFocused: Bool
     
     var body: some Scene {
         WindowGroup {
@@ -20,6 +20,7 @@ struct XCAChatGPTTVApp: App {
                 Text("XCA ChatGPT").font(.largeTitle)
                 HStack(alignment: .top) {
                     ContentView(vm: vm)
+                        .focusSection()
                         .cornerRadius(32)
                         .overlay {
                             if vm.messages.isEmpty {
@@ -40,8 +41,8 @@ struct XCAChatGPTTVApp: App {
                         .disabled(vm.isInteractingWithChatGPT)
                         .onSubmit {
                             Task { @MainActor in
-                                await vm.sendTapped()
-                                isTextFieldFocused = true
+                                isBottomButtonFocused = true
+                                await vm.sendTapped()                                
                             }
                         }
                         .onChange(of: isTextFieldFocused) { _  in
@@ -54,14 +55,35 @@ struct XCAChatGPTTVApp: App {
                         .frame(width: 176)
                         .disabled(vm.isInteractingWithChatGPT || vm.messages.isEmpty)
                         
-                        
                         ProgressView()
                             .progressViewStyle(.circular)
                             .padding()
                             .opacity(vm.isInteractingWithChatGPT ? 1 : 0)
+
+                        Spacer()
+                        
+                        Button {
+                            guard !vm.isInteractingWithChatGPT else { return }
+                            vm.scrollingToCommand = .init(type: .top)
+                        } label: {
+                            Image(systemName: "arrow.up.to.line.compact")
+                        }
+                        
+                        .opacity(vm.isInteractingWithChatGPT ? 0 : 1)
+                        .focused($isBottomButtonFocused)
+                        
+                        Button {
+                            guard !vm.isInteractingWithChatGPT else { return }
+                            vm.scrollingToCommand = .init(type: .bottom)
+                        } label: {
+                            Image(systemName: "arrow.down.to.line.compact")
+                        }
+                        .opacity(vm.isInteractingWithChatGPT ? 0 : 1)
                     }
+                    .focusSection()
                 }
             }
         }
     }
 }
+
