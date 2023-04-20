@@ -4,6 +4,7 @@
 
 This is a native iOS, macOS, watchOS, tvOS App for interacting with ChatGPT built using SwiftUI and OpenAPI API. It's using Official ChatGPT endpoint with `gpt-3.5-turbo` model.
 
+It is able to render markdown formatted string and provide code syntax highlighting as well.
 
 ## Video tutorial
 - [iOS YouTube](https://youtu.be/PLEgTCT20zU)
