@@ -35,11 +35,13 @@ class ViewModel: ObservableObject {
     
     init(api: ChatGPTAPI, enableSpeech: Bool = false) {
         self.api = api
+        #if !os(watchOS)
         if enableSpeech {
             #if !os(watchOS)
             synthesizer = .init()
             #endif
         }
+        #endif
     }
     
     @MainActor
@@ -145,7 +147,6 @@ class ViewModel: ObservableObject {
     }
     
     func speakLastResponse() {
-        return
         #if !os(watchOS)
         guard let synthesizer, let responseText = self.messages.last?.responseText, !responseText.isEmpty else {
             return
